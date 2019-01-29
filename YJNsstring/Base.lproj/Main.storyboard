@@ -100,11 +100,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="判断保留几位小数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wzI-Xx-71b">
+                                <rect key="frame" x="10" y="231" width="135.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="B1w-md-3ym" firstAttribute="centerY" secondItem="X6B-3C-62g" secondAttribute="centerY" id="33p-DM-vRo"/>
                             <constraint firstItem="HXN-W3-Ck9" firstAttribute="top" secondItem="t39-TX-CFq" secondAttribute="bottom" constant="20" id="CWA-hQ-1tY"/>
+                            <constraint firstItem="wzI-Xx-71b" firstAttribute="top" secondItem="HXN-W3-Ck9" secondAttribute="bottom" constant="20" id="Ehp-kf-oek"/>
                             <constraint firstItem="v5e-Ci-Qnp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="GJd-uE-qvM"/>
                             <constraint firstItem="VWs-gQ-3Fg" firstAttribute="leading" secondItem="v5e-Ci-Qnp" secondAttribute="trailing" constant="10" id="IWr-Rx-fpx"/>
                             <constraint firstItem="X6B-3C-62g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="J6Z-cL-dDP"/>
@@ -121,6 +128,7 @@
                             <constraint firstItem="Sxk-9d-Rrm" firstAttribute="centerY" secondItem="t39-TX-CFq" secondAttribute="centerY" id="k65-VO-tcC"/>
                             <constraint firstItem="VWs-gQ-3Fg" firstAttribute="centerY" secondItem="v5e-Ci-Qnp" secondAttribute="centerY" id="o1V-ko-cXG"/>
                             <constraint firstItem="NNc-IL-aNe" firstAttribute="leading" secondItem="V2v-Pw-zKe" secondAttribute="trailing" constant="10" id="pHG-10-7Gi"/>
+                            <constraint firstItem="wzI-Xx-71b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="pxX-Pn-mfv"/>
                             <constraint firstItem="V2v-Pw-zKe" firstAttribute="leading" secondItem="ce2-1r-BsN" secondAttribute="trailing" constant="10" id="sFc-Yg-oUT"/>
                             <constraint firstItem="V2v-Pw-zKe" firstAttribute="centerY" secondItem="ce2-1r-BsN" secondAttribute="centerY" id="tY5-D6-Afj"/>
                             <constraint firstItem="e2x-EO-HcC" firstAttribute="centerY" secondItem="B1w-md-3ym" secondAttribute="centerY" id="uXA-cA-VJ9"/>
@@ -132,12 +140,13 @@
                     </view>
                     <connections>
                         <outlet property="Onelable" destination="X6B-3C-62g" id="eaD-Xg-ecX"/>
+                        <outlet property="textfieldone" destination="wzI-Xx-71b" id="Lss-GT-RYq"/>
                         <outlet property="twolable" destination="HXN-W3-Ck9" id="kEK-Lb-9gV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="93"/>
+            <point key="canvasLocation" x="726" y="-16"/>
         </scene>
     </scenes>
 </document>

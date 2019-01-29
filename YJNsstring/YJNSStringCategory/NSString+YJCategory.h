@@ -46,6 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 内容变为小写字母*/
 + (NSString *)YJ_lowercaseString:(NSString*)string;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

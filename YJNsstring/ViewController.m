@@ -8,9 +8,10 @@
 
 #import "ViewController.h"
 #import "YJNSStringCategory/NSString+YJCategory.h"
-@interface ViewController ()
+@interface ViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *Onelable;
 @property (weak, nonatomic) IBOutlet UILabel *twolable;
+@property (weak, nonatomic) IBOutlet UITextField *textfieldone;
 
 @end
 
@@ -22,7 +23,7 @@
     int a = 1;
     // 小例子  1---->>01    1----->>001 时钟秒表  很方便 相信大家都知道,不知道的就总结一下
     NSString*str = [NSString stringWithFormat:@"%02d",a];
-    
+    _textfieldone.delegate = self;
     NSLog(@"%@",str);
 }
 
@@ -101,5 +102,31 @@
     
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    NSMutableString *futureString = [NSMutableString stringWithString:textField.text];
+    [futureString insertString:string atIndex:range.location];
+    NSInteger flag = 0;
+    // 这个可以自定义,保留到小数点后两位,后几位都可以
+    const NSInteger limited = 3;
+    for (NSInteger i = futureString.length - 1; i >= 0; i--) {
+        if ([futureString characterAtIndex:i] == '.') {
+            // 如果大于了限制的就提示
+            if (flag > limited) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"最多保留三位小数" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alert show];
+                return NO;
+            }
+            break;
+        }
+        flag++;
+    }
+    return YES;
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:YES];
+}
 
 @end
